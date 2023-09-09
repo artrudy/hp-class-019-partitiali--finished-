@@ -18,17 +18,28 @@ for (let i = 1; i <= numberOfObjects; i += 1) {
 
 objectsArray.map((it, index) => {
   let li = document.createElement("li");
+  li.classList.add(`class${index}`);
+  li.setAttribute("id", `id_${index}`);
 
-  document.body.appendChild(li);
+  const elementToAppend = document.querySelector(".arrays");
+  // console.log(elementToAppend);
+  elementToAppend?.appendChild(li);
 
   li.innerHTML = `${index + 1}: ${JSON.stringify(it)}`;
+
+  const imageElement = document.createElement("img");
+  li.appendChild(imageElement);
+  imageElement.src = `${index}.jpg`;
+
+  li.appendChild;
+  li.style.display = "flex";
+  li.style.flexDirection = "column";
 });
 
-// for (let j = 0; j < objectsArray.length; j += 1) {
-//   console.log(objectsArray[i]);
-//   let li = document.createElement("li");
+document.body.style.listStyle = "none";
+document.body.style.display = "flex";
+document.body.style.flexDirection = "column";
+document.body.style.justifyContent = "space-around";
+document.body.style.alignItems = "center";
 
-//   document.body.appendChild(li);
-
-//   li.innerHTML = JSON.stringify(objectsArray[j]);
-// }
+// console.log(elementToChangeStyle);
